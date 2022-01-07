@@ -13,12 +13,11 @@ const amazonUrl = `https://www.amazon.com`
 app.use(express.json());
 
 
+const userAPIKey = (api_key) => { return `http://api.scraperapi.com?api_key=${api_key}&autoparse=true` }
 
 app.get('/', (req, res) => {
   res.send('Hello');
 })
-
-const userAPIKey = (api_key) => { return `http://api.scraperapi.com?api_key=${api_key}&autoparse=true` }
 
 app.get('/products/:productId', async (req, res) => {
   const { productId } = req.params;
